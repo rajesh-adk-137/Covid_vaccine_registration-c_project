@@ -49,7 +49,6 @@ dis=display(task);
 system("cls");
     switch(dis)
     {
-
     case 1:
 
 return1=registeration(registerr);
