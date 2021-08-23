@@ -15,9 +15,9 @@ int user_data(int);
 int helpline(int);
 int stat_update(int);
 int vac_update(int);
-FILE *registration;//main data
-FILE *update_stats;//covid update
-FILE *uupdate_stats;//vaccine availibity update
+FILE *registration;//main data//
+FILE *update_stats;//covid update//
+FILE *uupdate_stats;//vaccine availibity update//
 struct data
     {
         char first_name[15], last_name[15];
@@ -38,7 +38,6 @@ struct data
 void gotoxy(int column, int line);
 
 int main()
-
 {
 
 int p,i=1,dis,task=0,tool,global,ticc_num;
