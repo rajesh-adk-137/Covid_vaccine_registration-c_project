@@ -397,7 +397,7 @@ else
                 gotoxy(1,25+i);
                 printf("'.xx.' means incorrect details entered*");
                 gotoxy(1,30+i);
-               printf("Press ESC to return to home page:\t");
+               printf("\nPress ESC to return to home page:\t");
                getch();
                ch = getch();
                switch(ch){
@@ -414,6 +414,7 @@ SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 
 int helpline(int help)
 {
+    char ch;
 printf("HELPLINE PHONE NUMBERS:\n\n");
 printf("\n\npokhara:    9856043234");
 printf("\n\nkathmandu:  9806600789");
@@ -432,6 +433,7 @@ return(help);
 
 int stat_update(int global)
 {
+    char ch;
     system("cls");
 FILE *update_stats;
 struct statics pp;
@@ -464,14 +466,19 @@ printf("\n\nnational vaccinated population percentage: ");
 scanf("%lli",&pp.uu[9]);
  fwrite(&pp,sizeof( struct statics),1,update_stats);
  fclose(update_stats);
-printf("\n\n\n\n\npress any number to return to home page: ");
-scanf("%d",&global);
+printf("\n\n\n\n\npress ESC to return to home page: ");
+ch=getch();
+switch (ch){
+    case ESC:
+    break;
+}
 return(1);
 }
 
 
 int statistics(statictics_return)
 {
+    char ch;
     FILE *update_stats;
 
                     struct statics pp;
@@ -493,14 +500,19 @@ printf("\n\ngobal vaccinated population        : %lli (percentage)",pp.uu[8]);
 printf("\n\nnational vaccinated population     : %lli (percentage)",pp.uu[9]);
 
                fclose(update_stats);
-printf("\n\n\n\n\npress any number to return to home page:\n");
-scanf("%d",&statictics_return);
+printf("\n\n\n\n\npress ESC to return to home page:\n");
+ch=getch();
+switch(ch){
+    case ESC:
+    break;
+}
 return(1);
 }
 
 
 int vac_update(int vac)
 {
+    char ch;
       system("cls");
 FILE *uupdate_stats;
 struct sstatics ppp;
@@ -526,14 +538,19 @@ printf("\n\nCoronaVac vaccine    :");
 scanf("%lli",&ppp.uuu[5]);
 fwrite(&ppp,sizeof( struct sstatics),1,uupdate_stats);
  fclose(uupdate_stats);
-printf("\n\n\n\n enter any number to exit: ");
-scanf("%d",&vac);
+printf("\n\n\n\n enter ESC to exit: ");
+ch=getch();
+switch(ch){
+    case ESC:
+    break;
+}
 return(1);
 }
 
 
 int vaccine(int vaccine_return)
 {
+    char ch;
     FILE *uupdate_stats;
 
                     struct sstatics ppp;
@@ -554,7 +571,11 @@ printf("CoronaVac vaccine:\t\t2\t\t\t%lli\n\n",ppp.uuu[5]);
 
                fclose(uupdate_stats);
 
-printf("\n\npress any number to return to home page: ");
-scanf("%d",&vaccine_return);
+printf("\n\npress ESC to return to home page: ");
+ch=getch();
+switch(ch){
+    case ESC:
+    break;
+}
 return(1);
 }
